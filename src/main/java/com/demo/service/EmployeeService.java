@@ -15,20 +15,4 @@ public class EmployeeService {
     public List<Employee> findAll() {
         return employeeRepository.findAll();
     }
-
-    public Employee findById(String id) {
-        return employeeRepository.findById(id);
-    }
-
-    public void save(Employee employee) {
-        employeeRepository.save(employee);
-    }
-
-    public void update(Employee employee) {
-        employeeRepository.update(employee);
-    }
-
-    public void delete(String id) {
-        employeeRepository.delete(id);
-    }
 }

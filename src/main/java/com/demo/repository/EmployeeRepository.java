@@ -16,19 +16,19 @@ public class EmployeeRepository {
 
     @Autowired
     @Qualifier("namedParameterJdbcTemplate1")
-    private NamedParameterJdbcTemplate jdbcTemplate1;
+    private NamedParameterJdbcTemplate namedParameterJdbcTemplate1;
 
     @Autowired
     @Qualifier("namedParameterJdbcTemplate2")
-    private NamedParameterJdbcTemplate jdbcTemplate2;
+    private NamedParameterJdbcTemplate namedParameterJdbcTemplate2;
 
     @Autowired
     private EmployeeMapper employeeMapper;
 
     public List<Employee> findAll() {
         List<Employee> employees = new ArrayList<>();
-        employees.addAll(jdbcTemplate1.query(FIND_ALL, employeeMapper));
-        employees.addAll(jdbcTemplate2.query(FIND_ALL, employeeMapper));
+        employees.addAll(namedParameterJdbcTemplate1.query(FIND_ALL, employeeMapper));
+        employees.addAll(namedParameterJdbcTemplate2.query(FIND_ALL, employeeMapper));
         return employees;
     }
 }
